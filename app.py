@@ -1,7 +1,10 @@
+import imp
 from flask import Flask, request, jsonify
 import random
+import os
 
 app = Flask(__name__)
+
 
 video_urls = [
     {
@@ -122,7 +125,9 @@ video_urls = [
         "title": "What care can you get for a grand?"
     }
 ]
-
+if __name__ == "__main__":
+    port = int(os.environ.get("PORT", 6070))
+    app.run(host='0.0.0.0', port=port)
 
 @app.route('/')
 def dontCall():
