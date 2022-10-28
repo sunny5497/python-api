@@ -1,2 +1,1 @@
-web: gunicorn wsgi:app
-heroku ps:scale web
+web: python wsgi.py
